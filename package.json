@@ -1,0 +1,19 @@
+{
+  "name": "bun-monorepo",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "dev:api": "bun run --filter @repo/api dev",
+    "dev:web": "bun run --filter @repo/web dev",
+    "build": "bun run --filter @repo/web build",
+    "typecheck": "bun run --filter '*' typecheck",
+    "db:generate": "bun run --filter @repo/db db:generate",
+    "db:migrate": "bun run --filter @repo/db db:migrate",
+    "db:push": "bun run --filter @repo/db db:push",
+    "db:studio": "bun run --filter @repo/db db:studio"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
